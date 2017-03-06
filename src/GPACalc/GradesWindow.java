@@ -18,15 +18,14 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
- * Created by argen on 3/4/2017.
- * lalallaallala
+ * Created by argen on 3/4/2017. lalallaallala
  */
 class GradesWindow {
 
     private static boolean displayAlert = true;
     private static final StringBuilder gradeChecker = new StringBuilder();
 
-     static void showGradesWindow() {
+    static void showGradesWindow() {
 
         Stage window = new Stage();
         window.setMinWidth(250);
@@ -35,7 +34,6 @@ class GradesWindow {
         gradesGridPane.setHgap(10);
         gradesGridPane.setVgap(10);
         gradesGridPane.setPadding(new Insets(25, 25, 25, 25));
-
 
         //Grade Input Grid
         for (int i = 0; i < Main.numberOfClasses; i++) {
@@ -58,8 +56,7 @@ class GradesWindow {
                 for (int i = 0; i < Main.numberOfClasses; i++) {
                     for (int j = 0; j < Main.numberOfGradingPeriods; j++) {
                         float temporaryGradeHolder = Float.parseFloat(Main.gradesFields[i][j].getText());
-                        if (temporaryGradeHolder > 4)
-                        {
+                        if (temporaryGradeHolder > 4) {
                             throw new NumberFormatException();
                         }
                         Main.gradeGrid[i][j] = temporaryGradeHolder;

@@ -20,13 +20,14 @@ public class Main extends Application {
     public static int numberOfGradingPeriods;
     private String classInfo;
     private String periodsInfo;
+    public static String[] classNames;
     private static final GridPane rootPane = new GridPane();
     public static TextField[][] gradesFields;
     private TextField[] classNamesFields;
     private final Label totalGPAField = new Label();
     private final Button gradeInputButton = new Button("Add Grades");
     private final Button calculateButton = new Button("Calculate GPA");
-    public static String[] classNames;
+    
 
     static float[][] gradeGrid;
 
@@ -41,12 +42,10 @@ public class Main extends Application {
         notANumber.getDialogPane().getButtonTypes().add(okButton);
         notANumber.setTitle("Invalid Input");
 
-
         rootPane.setAlignment(Pos.CENTER);
         rootPane.setHgap(10);
         rootPane.setVgap(10);
         rootPane.setPadding(new Insets(25, 25, 25, 25));
-
 
         Button startButton = new Button("Start");
         Button continueButton = new Button("Continue");
@@ -108,7 +107,6 @@ public class Main extends Application {
                 classNameInfo.setText(classNames[i]);
                 rootPane.add(classNameInfo, 0, i);
 
-
             }
             rootPane.add(gradeInputButton, 1, classNames.length);
             rootPane.add(calculateButton, 1, classNames.length + 1);
@@ -159,7 +157,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(rootPane, 300, 275));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
